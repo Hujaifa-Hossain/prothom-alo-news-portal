@@ -17,7 +17,7 @@ function App() {
         <Route path="news">
           <Route path="latest/:latestId" element={<LatestDetails />} />
           <Route path="mostread/:mostreadId" element={<MostreadDetails />} />
-          <Route path="disscussed/:discussedId" element={<DiscussedDetails/>} />
+          <Route path="discussed/:discussedId" element={<DiscussedDetails/>} />
           <Route path="selected/:selectedId" element={<SelectedDetails />} />
         </Route>
 
