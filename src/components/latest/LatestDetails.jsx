@@ -12,11 +12,10 @@ const LatestDetails = () => {
       .then((data) => setDetails(data));
   }, []);
 
-
   const latest = (details[0]?.latest?.items?.find(ele => ele.id.toString() === latestId.toString()))
 
   return (
-    <div>
+    <div className='details'>
       <h2>{latest?.headline} </h2>
 
       {<img src={latest?.["cover-photo"]}></img>}

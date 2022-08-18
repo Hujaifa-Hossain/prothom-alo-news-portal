@@ -11,28 +11,33 @@
 
 .contained {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  margin: 0 40px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 40px;
 }
 .contained .tabs {
   border-right: 1px solid #777;
 }
 .contained .tabs .tab-head {
-  padding: 0 10px;
-  font-weight: 400;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 500;
 }
 .contained .tabs .tab-head:hover {
   border-bottom: 2px solid red;
-  background-color: rgba(255, 245, 245, 0.525);
+  background-color: rgba(246, 246, 246, 0.525);
 }
 
-.selected .circle {
+.circle {
   display: inline-block;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: blue;
   margin: 0 10px;
+}
+
+img {
+  width: 100%;
 }
 
 .news {
@@ -46,4 +51,32 @@
 }
 .news a:hover {
   color: blue;
+}
+
+.select-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.details {
+  width: 80%;
+  margin: 0 10%;
+}
+.details img {
+  width: 100%;
+}
+.details p {
+  margin: 15px 10%;
+}
+
+@media only screen and (max-width: 992px) {
+  .contained {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 688px) {
+  .contained {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }/*# sourceMappingURL=styles.css.map */

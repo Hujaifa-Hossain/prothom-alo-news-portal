@@ -12,15 +12,14 @@ const MostreadDetails = () => {
       .then((data) => setDetails(data));
   }, []);
 
-
   const most = (details[0]?.mostread?.items?.find(ele => ele.id.toString() === mostreadId.toString()))
 
   return (
-    <div>
+    <div className='details'>
       <h2>{most?.headline} </h2>
 
-{<img src={most?.["cover-photo"]}></img>}
-<p>{most?.descriptions.replace(/(<([^>]+)>)/ig, ' ')}</p>
+      {<img src={most?.["cover-photo"]}></img>}
+      <p>{most?.descriptions.replace(/(<([^>]+)>)/ig, ' ')}</p>
     </div>
   );
 };

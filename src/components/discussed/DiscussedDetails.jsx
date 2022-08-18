@@ -12,17 +12,15 @@ const DiscussedDetails = () => {
       .then((data) => setDetails(data));
   }, []);
 
-
   const discussion = (details[0]?.discussed?.items?.find(ele => ele.id.toString() === discussedId.toString()))
-
 
   console.log(discussion)
   return (
-    <div>
+    <div className='details'>
       <h2>{discussion?.headline} </h2>
-        
-        {<img src={discussion?.["cover-photo"]}></img>}
-        <p>{discussion?.descriptions.replace(/(<([^>]+)>)/ig, ' ')}</p>
+
+      {<img src={discussion?.["cover-photo"]}></img>}
+      <p>{discussion?.descriptions.replace(/(<([^>]+)>)/ig, ' ')}</p>
     </div>
   );
 };

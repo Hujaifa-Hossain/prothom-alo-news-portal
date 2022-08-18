@@ -47,13 +47,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div className='selected'>
-
+      <div className='select-1'>
         <div className="circle"></div>
-        <span className='tab-head'>নির্বাচিত</span>
+        <span>নির্বাচিত</span>
 
-
-        {news && news[0]?.selected?.items.map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
+        {news && news[0]?.selected?.items.slice(0, 3).map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
+      </div>
+      <div className='news'>
+        {news && news[0]?.selected?.items.slice(3, 6).map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
       </div>
 
     </div>
