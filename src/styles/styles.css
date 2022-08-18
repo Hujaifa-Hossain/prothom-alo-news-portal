@@ -1,0 +1,49 @@
+.header {
+  box-shadow: 0 6px 6px -6px #777;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+.header img {
+  width: 260px;
+  height: 65px;
+}
+
+.contained {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 40px;
+}
+.contained .tabs {
+  border-right: 1px solid #777;
+}
+.contained .tabs .tab-head {
+  padding: 0 10px;
+  font-weight: 400;
+}
+.contained .tabs .tab-head:hover {
+  border-bottom: 2px solid red;
+  background-color: rgba(255, 245, 245, 0.525);
+}
+
+.selected .circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 0 10px;
+}
+
+.news {
+  border-bottom: 1px solid #777;
+  margin: 10px;
+}
+.news a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+.news a:hover {
+  color: blue;
+}/*# sourceMappingURL=styles.css.map */

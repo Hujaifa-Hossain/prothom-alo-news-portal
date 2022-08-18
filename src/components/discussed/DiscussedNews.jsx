@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom';
 const DiscussedNews = ({discussion}) => {
   const {id, sort, headline} = discussion;
   return (
-    <Link to={`news/discussed/${id}`}>
+    <div className="news">
+      <Link to={`news/discussed/${id}`}>
     <h2>{sort}</h2>
-    <h2>{headline}</h2>
+    <h3 className='headline'>{headline}</h3>
   </Link>
+    </div>
   );
 };
 

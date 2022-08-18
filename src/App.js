@@ -1,11 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
 import Home from "./pages/Home";
-import DiscussedDetails from "./components/discussed/DiscussedDetails";
-import LatestDetails from "./components/latest/LatestDetails";
-import SelectedDetails from "./components/selected/SelectedDetails";
-import MostreadDetails from "./components/mostread/MostreadDetails";
 import Header from "./shared/Header";
+import LatestDetails from "./components/latest/LatestDetails";
+import MostreadDetails from "./components/mostread/MostreadDetails";
+import DiscussedDetails from "./components/discussed/DiscussedDetails";
+import SelectedDetails from "./components/selected/SelectedDetails";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        
+
         <Route path="news">
           <Route path="latest/:latestId" element={<LatestDetails />} />
           <Route path="mostread/:mostreadId" element={<MostreadDetails />} />

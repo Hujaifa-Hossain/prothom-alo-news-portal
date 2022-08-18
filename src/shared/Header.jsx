@@ -4,7 +4,7 @@ import LOGO from '../assets/logo.png';
 
 const Header = () => {
   return (
-    <div>
+    <div className='header'>
       <Link to='/'>
         <img className="logo" src={LOGO} alt="" />
       </Link>
