@@ -7,7 +7,7 @@ const SelectedNews = ({ select }) => {
     <div className="news">
       <Link className='link' to={`news/selected/${id}`}>
         <div className='image'>
-          <img src={thumb} alt="" />
+          <img src={thumb} alt={headline} />
         </div>
         
         <div className="text">
