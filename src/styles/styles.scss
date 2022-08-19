@@ -1,10 +1,12 @@
 $shadow-color: #777;
 $border: 1px solid;
 
+// header
+
 .header {
   box-shadow: 0 6px 6px -6px $shadow-color;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 30px;
 
   img {
@@ -13,26 +15,29 @@ $border: 1px solid;
   }
 }
 
+// home container and tab 
+
 .contained {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  // grid-template-rows: auto auto auto;
-
   padding: 0 40px;
 
   .tabs {
     border-right: $border $shadow-color;
     .tab-head {
-      padding: 10px;
-      margin: 10px;
+      padding: 10px 20px;
       font-weight: 500;
-      &:hover {
-        border-bottom: 2px solid red;
-        background-color: rgba(246, 246, 246, 0.525);
-      }
+      cursor: grab;
+    }
+
+    .active {
+      border-bottom: 2px solid red;
+      background-color: rgba(246, 246, 246, 0.525);
     }
   }
 }
+
+// circle of selected 
 
 .circle {
   display: inline-block;
@@ -42,13 +47,16 @@ $border: 1px solid;
   background-color: blue;
   margin: 0 10px;
 }
-img {
-  width: 100%;
-}
+
+// every news 
 
 .news {
   border-bottom: $border $shadow-color;
   margin: 10px;
+  p{
+    margin: 0;
+    font-size: 36px;
+  }
   a {
     text-decoration: none;
     color: #000;
@@ -63,7 +71,20 @@ img {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 10px;
+  .text{
+    font-size: 14px;
+    margin-right: 20px;
+  }
+  .image{
+    width: 100px;
+    img{
+      width: 100px;
+    }
+  }
 }
+
+// detaails of news 
 
 .details {
   width: 80%;
@@ -76,14 +97,22 @@ img {
   }
 }
 
+// media query 
+
 @media only screen and (max-width: 992px) {
   .contained {
     grid-template-columns: repeat(2, 1fr);
+    .tabs {
+      border-right: none;
+    }
   }
 }
 
 @media only screen and (max-width: 688px) {
   .contained {
     grid-template-columns: repeat(1, 1fr);
+    .tabs {
+      border-right: none;
+    }
   }
 }

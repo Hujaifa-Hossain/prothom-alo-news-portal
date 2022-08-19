@@ -18,7 +18,7 @@ const MostreadDetails = () => {
     <div className='details'>
       <h2>{most?.headline} </h2>
 
-      {<img src={most?.["cover-photo"]}></img>}
+      {<img src={most?.["cover-photo"]} alt=''></img>}
       <p>{most?.descriptions.replace(/(<([^>]+)>)/ig, ' ')}</p>
     </div>
   );

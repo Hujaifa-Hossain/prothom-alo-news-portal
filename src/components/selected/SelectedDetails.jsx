@@ -17,7 +17,7 @@ const SelectedDetails = () => {
     <div className='details'>
       <h2>{select?.headline} </h2>
 
-      {<img src={select?.["cover-photo"]}></img>}
+      {<img src={select?.["cover-photo"]} alt=''></img>}
       <p>{select?.descriptions.replace(/(<([^>]+)>)/ig, ' ')}</p>
     </div>
   );

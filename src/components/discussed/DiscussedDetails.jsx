@@ -19,7 +19,7 @@ const DiscussedDetails = () => {
     <div className='details'>
       <h2>{discussion?.headline} </h2>
 
-      {<img src={discussion?.["cover-photo"]}></img>}
+      {<img src={discussion?.["cover-photo"]} alt=''></img>}
       <p>{discussion?.descriptions.replace(/(<([^>]+)>)/ig, ' ')}</p>
     </div>
   );

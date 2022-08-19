@@ -3,6 +3,7 @@ import LatestNews from '../components/latest/LatestNews';
 import MostreadNews from '../components/mostread/MostreadNews';
 import DiscussedNews from '../components/discussed/DiscussedNews';
 import SelectedNews from '../components/selected/SelectedNews';
+import TabHead from '../components/tabs/TabHead';
 
 const Home = () => {
   const [news, setNews] = useState([]);
@@ -18,33 +19,21 @@ const Home = () => {
     <div className='contained'>
 
       <div className="tabs">
-        <div className="tab-list">
-          <span className="tab-head" onClick={() => setIndex(0)}>
-            সর্বশেষ
-          </span>
-          <span className="tab-head" onClick={() => setIndex(1)}>
-            পঠিত
-          </span>
-          <span className="tab-head" onClick={() => setIndex(2)}>
-            আলোচিত
-          </span>
 
+        <TabHead index={index} setIndex={setIndex} />
+
+        <div className="tab-content" hidden={index !== 0}>
+          {news && news[0]?.latest?.items.map(latest => <LatestNews key={latest.id} latest={latest}></LatestNews>)}
         </div>
-        <div className="tab-content" hidden={index != 0}>
-          <div className=''>
-            {news && news[0]?.latest?.items.map(latest => <LatestNews key={latest.id} latest={latest}></LatestNews>)}
-          </div>
+
+        <div className="tab-content" hidden={index !== 1}>
+          {news && news[0]?.mostread?.items.map(most => <MostreadNews key={most.id} most={most}></MostreadNews>)}
         </div>
-        <div className="tab-content" hidden={index != 1}>
-          <div className=''>
-            {news && news[0]?.mostread?.items.map(most => <MostreadNews key={most.id} most={most}></MostreadNews>)}
-          </div>
+
+        <div className="tab-content" hidden={index !== 2}>
+          {news && news[0]?.discussed?.items.map(discussion => <DiscussedNews key={discussion.id} discussion={discussion}></DiscussedNews>)}
         </div>
-        <div className="tab-content" hidden={index != 2}>
-          <div className=''>
-            {news && news[0]?.discussed?.items.map(discussion => <DiscussedNews key={discussion.id} discussion={discussion}></DiscussedNews>)}
-          </div>
-        </div>
+        
       </div>
 
       <div className='select-1'>
@@ -53,7 +42,8 @@ const Home = () => {
 
         {news && news[0]?.selected?.items.slice(0, 3).map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
       </div>
-      <div className='news'>
+
+      <div className=''>
         {news && news[0]?.selected?.items.slice(3, 6).map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
       </div>
 

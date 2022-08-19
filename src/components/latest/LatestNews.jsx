@@ -7,8 +7,8 @@ const LatestNews = ({ latest }) => {
 
   return (
     <div className='news'>
+      <p>{sort}</p>
       <Link to={`news/latest/${id}`}>
-        <h2>{sort}</h2>
         <h3 className='headline'>{headline}</h3>
       </Link>
     </div>
