@@ -16,7 +16,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className='contained'>
+    <main className='contained'>
 
       <div className="tabs">
 
@@ -42,14 +42,16 @@ const Home = () => {
         
         <p className="circle"></p> <span>নির্বাচিত</span>
 
+        <div className="news-box">
         {news && news[0]?.selected?.items.slice(0, 3).map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
+        </div>
       </div>
 
       <div className='select'>
         {news && news[0]?.selected?.items.slice(3, 6).map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
       </div>
 
-    </div>
+    </main>
   );
 };
 
