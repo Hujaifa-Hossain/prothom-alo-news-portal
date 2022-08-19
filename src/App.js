@@ -5,6 +5,7 @@ import LatestDetails from "./components/latest/LatestDetails";
 import MostreadDetails from "./components/mostread/MostreadDetails";
 import DiscussedDetails from "./components/discussed/DiscussedDetails";
 import SelectedDetails from "./components/selected/SelectedDetails";
+import Footer from "./shared/Footer";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path="selected/:selectedId" element={<SelectedDetails />} />
         </Route>
       </Routes>
+      
+      <Footer/>
     </>
   );
 }

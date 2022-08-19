@@ -22,28 +22,30 @@ const Home = () => {
 
         <TabHead index={index} setIndex={setIndex} />
 
-        <div className="tab-content" hidden={index !== 0}>
+        <div className="tab-container">
+        <div hidden={index !== 0}>
           {news && news[0]?.latest?.items.map(latest => <LatestNews key={latest.id} latest={latest}></LatestNews>)}
         </div>
 
-        <div className="tab-content" hidden={index !== 1}>
+        <div hidden={index !== 1}>
           {news && news[0]?.mostread?.items.map(most => <MostreadNews key={most.id} most={most}></MostreadNews>)}
         </div>
 
-        <div className="tab-content" hidden={index !== 2}>
+        <div hidden={index !== 2}>
           {news && news[0]?.discussed?.items.map(discussion => <DiscussedNews key={discussion.id} discussion={discussion}></DiscussedNews>)}
+        </div>
         </div>
         
       </div>
 
-      <div className='select-1'>
-        <div className="circle"></div>
-        <span>নির্বাচিত</span>
+      <div className='select-1 '>
+        
+        <p className="circle"></p> <span>নির্বাচিত</span>
 
         {news && news[0]?.selected?.items.slice(0, 3).map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
       </div>
 
-      <div className=''>
+      <div className='select'>
         {news && news[0]?.selected?.items.slice(3, 6).map(select => <SelectedNews key={select.id} select={select}></SelectedNews>)}
       </div>
 

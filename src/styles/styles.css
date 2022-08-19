@@ -11,8 +11,10 @@
 
 .contained {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding: 0 40px;
+  grid-template-columns: 25% 50% 25%;
+}
+.contained div {
+  margin: 10px 10px;
 }
 .contained .tabs {
   border-right: 1px solid #777;
@@ -23,18 +25,12 @@
   cursor: -webkit-grab;
   cursor: grab;
 }
+.contained .tabs .tab-container {
+  margin-top: 20px;
+}
 .contained .tabs .active {
   border-bottom: 2px solid red;
   background-color: rgba(246, 246, 246, 0.525);
-}
-
-.circle {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: blue;
-  margin: 0 10px;
 }
 
 .news {
@@ -54,21 +50,41 @@
   color: blue;
 }
 
-.select-2 {
+.select .link {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-direction: row-reverse;
   margin: 10px;
 }
-.select-2 .text {
+.select .text {
   font-size: 14px;
   margin-right: 20px;
 }
-.select-2 .image {
+.select .text span {
+  color: red;
+}
+.select .image {
   width: 100px;
 }
-.select-2 .image img {
+.select .image img {
   width: 100px;
+}
+
+.select-1 .circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: blue;
+  margin: 0 10px;
+}
+.select-1 .span-text {
+  color: red;
+}
+.select-1 img {
+  width: 100%;
+  height: 250px;
 }
 
 .details {
@@ -79,12 +95,17 @@
   width: 100%;
 }
 .details p {
-  margin: 15px 10%;
+  margin: 20px 10%;
+}
+
+.footer {
+  text-align: center;
+  margin: 40px 0;
 }
 
 @media only screen and (max-width: 992px) {
   .contained {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 50% 50%;
   }
   .contained .tabs {
     border-right: none;
